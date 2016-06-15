@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/vendor/jquery-1.11.2.js" type="text/javascript"></script>
+        <script src="jquery-ui-1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="jquery-ui-1.11.4/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+        <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+
+//            var finalposition;
+//            finalposition.width = 0;
+//            finalposition.height = 0;
+//
+//
+//            function makeimage(image1url, image2url, image1width image1height) {
+//
+//                
+//
+//            }
+
+          
+
+            $(function () {
+                
+                
+                $('#dragThis').draggable(
+                        {
+                            drag: function () {
+                                var offset = $(this).offset();
+                                var xPos = offset.left;
+                                var yPos = offset.top;
+                                $('#posX').text('x: ' + xPos);
+                                $('#posY').text('y: ' + yPos);
+                            },
+                            containment: "parent"
+                         
+                        });
+                        
+                $('#mymainimage').css({ height: $(window).innerHeight(),
+                                         width: $(window).innerWidth() });
+                $(window).resize(function(){
+                 $('#mymainimage').css({ height: $(window).innerHeight(),
+                                         width: $(window).innerWidth()});
+                                     
+                  
+                });        
+                        
+                        
+                        
+            });
+
+
+        </script>
+
+    </head>
+    <body>
+       
+        
+        <ul>
+            <li id="posX"></li>
+            <li id="posY"></li>
+        </ul>
+
+        <div class="mymainimage" style="height:100%;width:100%;">
+            <img id="dragThis" src="img/success.gif" alt="" />
+
+        </div>
+
+        
+
+
+    </body>
+
+</html>
