@@ -9,27 +9,26 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="js/vendor/jquery-1.11.2.js" type="text/javascript"></script>
         <script src="jquery-ui-1.11.4/jquery-ui.min.js" type="text/javascript"></script>
         <script src="jquery-ui-1.11.4/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
+
+
         <script type="text/javascript">
 
-//            var finalposition;
-//            finalposition.width = 0;
-//            finalposition.height = 0;
-//
-//
-//            function makeimage(image1url, image2url, image1width image1height) {
-//
-//                
-//
-//            }
+            var finalposition = {
+                width : 0,
+                height : 0
+            };
 
-          
+            function makeimage(image1url, image2url) {
 
-            $(function () {
-                
+                $("#dragThis").attr("src",image1url);
+                document.getElementById("mainImage").style.backgroundImage = "url("+image2url+")";
                 
                 $('#dragThis').draggable(
                         {
@@ -38,23 +37,46 @@ and open the template in the editor.
                                 var xPos = offset.left;
                                 var yPos = offset.top;
                                 $('#posX').text('x: ' + xPos);
+                                finalposition.width = xPos;
                                 $('#posY').text('y: ' + yPos);
+                                finalposition.height = yPos;
                             },
-                            containment: "parent"
-                         
-                        });
-                        
-                $('#mymainimage').css({ height: $(window).innerHeight(),
-                                         width: $(window).innerWidth() });
-                $(window).resize(function(){
-                 $('#mymainimage').css({ height: $(window).innerHeight(),
-                                         width: $(window).innerWidth()});
-                                     
-                  
-                });        
-                        
-                        
-                        
+                                containment: "parent"
+
+                            });
+
+                    $('#mymainimage').css({height: $(window).innerHeight(),
+                        width: $(window).innerWidth()});
+                    $(window).resize(function () {
+                        $('#mymainimage').css({height: $(window).innerHeight(),
+                            width: $(window).innerWidth()});
+
+                    });
+
+
+
+                }
+
+
+
+            $(function () {
+                
+                image1url="img/success.gif";
+                image2url="img/dimopsifisma.png";
+                makeimage(image1url, image2url);
+                
+                var windowWidth = $(window).width();
+
+                $(window).resize(function() {
+                    if(windowWidth !== $(window).width()){
+                    location.reload();
+                    return;
+                    }
+                });
+                
+
+
+
             });
 
 
@@ -62,19 +84,54 @@ and open the template in the editor.
 
     </head>
     <body>
-       
-        
-        <ul>
-            <li id="posX"></li>
-            <li id="posY"></li>
-        </ul>
 
-        <div class="mymainimage" style="height:100%;width:100%;">
-            <img id="dragThis" src="img/success.gif" alt="" />
 
-        </div>
+<!--        <div class="container">
 
-        
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+             Modal 
+            <div class="modal fade" id="myModal" role="document">
+                <div class="modal-dialog">
+
+                     Modal content
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">-->
+
+
+
+
+
+                           
+
+                            <div id="mainImage" class="mymainimage" style="height:90%;width:90%;">
+                                <img id="dragThis" src="" alt="" />
+
+                            </div>
+
+
+
+
+
+
+<!--                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>-->
+
+
+
+
 
 
     </body>
