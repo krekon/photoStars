@@ -10,12 +10,13 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link href="css/main.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="js/vendor/jquery-1.11.2.js" type="text/javascript"></script>
         <script src="jquery-ui-1.11.4/jquery-ui.min.js" type="text/javascript"></script>
         <script src="jquery-ui-1.11.4/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-        <link href="css/main.css" rel="stylesheet" type="text/css"/>
+        
 
 
         <script type="text/javascript">
@@ -24,32 +25,70 @@ and open the template in the editor.
                 width : 0,
                 height : 0
             };
+            
+            function SaveIT()
+            {
+                finalposition.width;
+                finalposition.height;
+            }
+            
+            
+            
+            function hideBtnSP() { 
+                    document.getElementById("divSP").style.display = "none"; 
+                }
+            function showBtnSP() { 
+                    document.getElementById("divSP").style.display = "inline"; 
+                }
+                
+            function MoveBtn() { 
+                    var btnoffset = $("#btnSavePosition").offset();
+                    var xPosbtn = btnoffset.left;
+                    var yPosbtn = btnoffset.top;
+                    
+                    var IWidth = document.getElementById('dragThis').clientWidth;
+                    var IHeight = document.getElementById('dragThis').clientHeight;
+                    
+                    var BWidth = document.getElementById('btnSavePosition').clientWidth;
+                    var BHeight = document.getElementById('btnSavePosition').clientHeight;
+
+                    if(Math.abs(finalposition.width-xPosbtn)<(IWidth/2+BWidth/2) && Math.abs(finalposition.height-yPosbtn)<(IHeight/2+BHeight/2))
+                    {
+                        var kati=0;
+                    }
+                    
+                }    
+                
+                
 
             function makeimage(image1url, image2url) {
 
                 $("#dragThis").attr("src",image1url);
                 document.getElementById("mainImage").style.backgroundImage = "url("+image2url+")";
-                
+                 
                 $('#dragThis').draggable(
                         {
                             drag: function () {
+                                
                                 var offset = $(this).offset();
                                 var xPos = offset.left;
                                 var yPos = offset.top;
-                                $('#posX').text('x: ' + xPos);
+                                
                                 finalposition.width = xPos;
-                                $('#posY').text('y: ' + yPos);
+                                
                                 finalposition.height = yPos;
+                                                               
                             },
                                 containment: "parent"
 
                             });
 
-                    $('#mymainimage').css({height: $(window).innerHeight(),
-                        width: $(window).innerWidth()});
+                    $('#mymainimage').css({height: "100%",
+                                            width: "100%"});
                     $(window).resize(function () {
-                        $('#mymainimage').css({height: $(window).innerHeight(),
-                            width: $(window).innerWidth()});
+                        $('#mymainimage').css({height: "100%",
+                                                width: "100%"});
+                        
 
                     });
 
@@ -69,8 +108,8 @@ and open the template in the editor.
 
                 $(window).resize(function() {
                     if(windowWidth !== $(window).width()){
-                    location.reload();
-                    return;
+                        location.reload();
+                        return;
                     }
                 });
                 
@@ -108,8 +147,11 @@ and open the template in the editor.
 
                            
 
-                            <div id="mainImage" class="mymainimage" style="height:90%;width:90%;">
-                                <img id="dragThis" src="" alt="" />
+                            <div id="mainImage" class="mymainimage" style="height:100%;width:100%;">
+                                <img id="dragThis" src="" alt="" onmouseup="showBtnSP();MoveBtn();" onmousedown="hideBtnSP()"/>
+                                <div id="divSP" style="display:none">
+                                    <input type="button" id="btnSavePosition" value="Save It" onclick="SaveIt()" class="btn btn-success-outline"/>
+                                </div>
 
                             </div>
 

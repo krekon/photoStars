@@ -22,6 +22,14 @@ html, body {
     background-repeat:no-repeat;
 }
 
+
+
+img {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    
+}
 /*.modal-dialog {
   width: 100%;
   height: 100%;
