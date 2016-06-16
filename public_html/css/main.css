@@ -15,12 +15,27 @@ html, body {
             }
 
 .mymainimage{
-    border:1px solid black;
-    
-    
-    background-size:100% 100%;
-    background-repeat:no-repeat;
+    display: inline-block;
+  height: calc(20% - 2px);
+  width: calc(20% - 2px);
+  background: #ddd no-repeat center center;
+  background-size: contain;
+  margin: 1px;
 }
+
+/*#divSP{
+    position: relative;
+    left: 5%;
+    top: 5%;
+}*/
+
+.top{top:0}
+.middle{top:50%;margin-top:-10px;}
+.bottom{bottom:0}
+
+.left{left:0;}
+.center{left:50%;margin-left:-10px;}
+.right{right:0;}
 
 
 

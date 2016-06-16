@@ -52,7 +52,7 @@ and open the template in the editor.
                     var BWidth = document.getElementById('btnSavePosition').clientWidth;
                     var BHeight = document.getElementById('btnSavePosition').clientHeight;
 
-                    if(Math.abs(finalposition.width-xPosbtn)<(IWidth/2+BWidth/2) && Math.abs(finalposition.height-yPosbtn)<(IHeight/2+BHeight/2))
+                    if(Math.abs(finalposition.width-xPosbtn)<(IWidth+BWidth/2) && Math.abs(finalposition.height-yPosbtn)<(IHeight/2+BHeight/2))
                     {
                         var kati=0;
                     }
@@ -68,16 +68,14 @@ and open the template in the editor.
                  
                 $('#dragThis').draggable(
                         {
-                            drag: function () {
-                                
+                            drag: function () 
+                            {
                                 var offset = $(this).offset();
                                 var xPos = offset.left;
                                 var yPos = offset.top;
                                 
                                 finalposition.width = xPos;
-                                
-                                finalposition.height = yPos;
-                                                               
+                                finalposition.height = yPos;         
                             },
                                 containment: "parent"
 
@@ -89,14 +87,9 @@ and open the template in the editor.
                         $('#mymainimage').css({height: "100%",
                                                 width: "100%"});
                         
-
                     });
 
-
-
                 }
-
-
 
             $(function () {
                 
@@ -113,9 +106,6 @@ and open the template in the editor.
                     }
                 });
                 
-
-
-
             });
 
 
@@ -149,7 +139,7 @@ and open the template in the editor.
 
                             <div id="mainImage" class="mymainimage" style="height:100%;width:100%;">
                                 <img id="dragThis" src="" alt="" onmouseup="showBtnSP();MoveBtn();" onmousedown="hideBtnSP()"/>
-                                <div id="divSP" style="display:none">
+                                <div id="divSP" class="middle"  style="display:none">
                                     <input type="button" id="btnSavePosition" value="Save It" onclick="SaveIt()" class="btn btn-success-outline"/>
                                 </div>
 
