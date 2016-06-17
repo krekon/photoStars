@@ -16,168 +16,155 @@ and open the template in the editor.
         <script src="js/vendor/jquery-1.11.2.js" type="text/javascript"></script>
         <script src="jquery-ui-1.11.4/jquery-ui.min.js" type="text/javascript"></script>
         <script src="jquery-ui-1.11.4/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
-        
+
 
 
         <script type="text/javascript">
 
             var finalposition = {
-                width : 0,
-                height : 0
+                width: 0,
+                height: 0
             };
-            
+
             function SaveIT()
             {
                 finalposition.width;
                 finalposition.height;
             }
-            
-            
-            
-            function hideBtnSP() { 
-                    document.getElementById("divSP").style.display = "none"; 
-                }
-            function showBtnSP() { 
-                    document.getElementById("divSP").style.display = "inline"; 
-                }
+
+
+
+            function hideBtnSP() {
+                $("#divSP").fadeOut("slow");
+            }
+            function showBtnSP() {
+                $("#divSP").fadeIn("slow");
                 
-            function MoveBtn() { 
-                    var btnoffset = $("#btnSavePosition").offset();
-                    var xPosbtn = btnoffset.left;
-                    var yPosbtn = btnoffset.top;
-                    
-                    var IWidth = document.getElementById('dragThis').clientWidth;
-                    var IHeight = document.getElementById('dragThis').clientHeight;
-                    
-                    var BWidth = document.getElementById('btnSavePosition').clientWidth;
-                    var BHeight = document.getElementById('btnSavePosition').clientHeight;
+            }
 
-                    if(Math.abs(finalposition.width-xPosbtn)<(IWidth+BWidth/2) && Math.abs(finalposition.height-yPosbtn)<(IHeight/2+BHeight/2))
-                    {
-                        var kati=0;
-                    }
-//                    
-//                    var imgWidth = document.getElementById("dragThis").style.width;
-//                var imgHeight = document.getElementById("dragThis").style.height;
-//                
-//                $('#mainImage').css('maxWidth', imgWidth);
-//                $('#mainImage').css('maxHeight', imgHeight);
-//                    
+            function MoveBtn() {
+                var btnoffset = $("#btnSavePosition").offset();
+                var xPosbtn = btnoffset.left;
+                var yPosbtn = btnoffset.top;
+
+                var IWidth = document.getElementById('dragThis').clientWidth;
+                var IHeight = document.getElementById('dragThis').clientHeight;
+
+                var BWidth = document.getElementById('btnSavePosition').clientWidth;
+                var BHeight = document.getElementById('btnSavePosition').clientHeight;
+
+                if (Math.abs(finalposition.width - xPosbtn) < (IWidth + BWidth / 2) && Math.abs(finalposition.height - yPosbtn) < (IHeight / 2 + BHeight / 2))
+                {
+                        if(document.getElementById("divSP").style.left === "-35%")
+                        {
+                            document.getElementById("divSP").style.left = "35%";
+                        }
+                        else
+                        {
+                            document.getElementById("divSP").style.left = "-35%";
+                        }
+                        
+                }
+
+            }
 
 
-                    var image_url = $('#mainImage').css('background-image'),
+
+            function divTouchImg()
+            {
+
+                var image_url = $('#mainImage').css('background-image'),
                         image;
 
-                    
-                    image_url = image_url.match(/^url\("?(.+?)"?\)$/);
 
-                    if (image_url[1]) {
-                        image_url = image_url[1];
-                        image = new Image();
+                image_url = image_url.match(/^url\("?(.+?)"?\)$/);
 
-                        
-                        $(image).load(function () {
-                            
-                            if(image.width < image.height){
-                                newW = $('#mainImage').width();
-                                newH = image.height / image.width * newW;
-                                newW = image.width / image.height * newH;
-                            }else{
-                                newH = $('#mainImage').height();
-                                newW = image.width / image.height * newH;     
-                            }
-                            
-//                            addNewStyle('#mainImage{width:'+newW.toFixed(0)+' !important;height:'+newH.toFixed(0)+' !important;}');
-                            
-                            
-                            $(".mymainimage").css("height",newH.toFixed(0));
-                            $(".mymainimage").css("width",newW.toFixed(0));
-                            
-                            
-                            document.getElementById("mainImage").style.width = newW.toFixed(0);  
-                            document.getElementById("mainImage").style.height = newH.toFixed(0);
-                        });
-                        
-                        
-                        
-//                        function addNewStyle(newStyle) {
-//                                var styleElement = document.getElementById('mainImage');
-//                                if (!styleElement) {
-//                                    styleElement = document.createElement('mainImage');
-//                                    styleElement.type = 'text/css';
-//                                    styleElement.id = 'mainImage';
-//                                    document.getElementsByTagName('head')[0].appendChild(styleElement);
-//                                }
-//                                styleElement.appendChild(document.createTextNode(newStyle));
-//                            }
-
-                            
-
-                        image.src = image_url;
-                    }
+                if (image_url[1]) {
+                    image_url = image_url[1];
+                    image = new Image();
 
 
+                    $(image).load(function () {
 
 
+                        middleW = $('#mainImage').width();
+                        newH = image.height / image.width * middleW;
 
-                }    
-                
-                
-                
+                        middleH = $('#mainImage').height();
+                        newW = image.width / image.height * middleH;
+
+
+                        $(".mymainimage").css("height", newH.toFixed(0));
+                        $(".mymainimage").css("width", newW.toFixed(0));
+                        $(".mymainimage").css("position", "static");
+                        $(".mymainimage").css("top", "50%");
+                        $(".mymainimage").css("left", "50%");
+
+
+                    });
+
+                    image.src = image_url;
+                }
+
+            }
 
             function makeimage(image1url, image2url) {
 
-                $("#dragThis").attr("src",image1url);
-                document.getElementById("mainImage").style.backgroundImage = "url("+image2url+")";
-//                document.getElementById("mainImage").style.maxHeight = "initial";
-//                document.getElementById("mainImage").style.maxWidth = "initial";
-//                
+                $("#dragThis").attr("src", image1url);
+                document.getElementById("mainImage").style.backgroundImage = "url(" + image2url + ")";
+
                 var imgWidth = document.getElementById("dragThis").style.width;
                 var imgHeight = document.getElementById("dragThis").style.height;
-                
+
                 $('#mainImage').css('maxWidth', imgWidth);
                 $('#mainImage').css('maxHeight', imgHeight);
-                 
+
                 $('#dragThis').draggable(
                         {
-                            drag: function () 
+                            drag: function ()
                             {
                                 var offset = $(this).offset();
                                 var xPos = offset.left;
                                 var yPos = offset.top;
-                                
+
                                 finalposition.width = xPos;
-                                finalposition.height = yPos;         
+                                finalposition.height = yPos;
                             },
-                                containment: "parent"
+                            containment: "parent"
 
-                            });
+                        });
 
+                $('#mymainimage').css({height: "100%",
+                    width: "100%"});
+                $(window).resize(function () {
                     $('#mymainimage').css({height: "100%",
-                                            width: "100%"});
-                    $(window).resize(function () {
-                        $('#mymainimage').css({height: "100%",
-                                                width: "100%"});
-                        
-                    });
+                        width: "100%"});
 
-                }
+                });
+
+            }
+
+
+
+
 
             $(function () {
-                
-                image1url="img/success.gif";
-                image2url="img/dimopsifisma.png";
-                makeimage(image1url, image2url);
-                
-                var windowWidth = $(window).width();
 
-                $(window).resize(function() {
-                    if(windowWidth !== $(window).width()){
+                image1url = "img/success.gif";
+                image2url = "img/dimopsifisma.png";
+                makeimage(image1url, image2url);
+
+                divTouchImg();
+
+
+                var windowWidth = $(window).width();
+                $(window).resize(function () {
+                    if (windowWidth !== $(window).width()) {
                         location.reload();
                         return;
                     }
                 });
-                
+
             });
 
 
@@ -187,55 +174,44 @@ and open the template in the editor.
     <body>
 
 
-<!--        <div class="container">
-
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-             Modal 
-            <div class="modal fade" id="myModal" role="document">
-                <div class="modal-dialog">
-
-                     Modal content
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
-                        </div>
-                        <div class="modal-body">-->
-
-
-
-
-
-                           
-
-                            <div id="mainImage" class="mymainimage" style="height:100%;width:100%;">
-                                <img id="dragThis" src="" alt="" onmouseup="showBtnSP();MoveBtn();" onmousedown="hideBtnSP()"/>
-                                <div id="divSP" class="middle"  style="display:none">
-                                    <input type="button" id="btnSavePosition" value="Save It" onclick="SaveIt()" class="btn btn-success-outline"/>
+        <!--        <div class="container">
+        
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+        
+                     Modal 
+                    <div class="modal fade" id="myModal" role="document">
+                        <div class="modal-dialog">
+        
+                             Modal content
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Modal Header</h4>
                                 </div>
-
-                            </div>
-
+                                <div class="modal-body">-->
 
 
 
-
-
-<!--                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
+        <div id="mainImage" class="mymainimage middle center" style="height:100%;width:100%;">
+            <img id="dragThis" src="" alt="" onmouseup="showBtnSP();
+                    MoveBtn();" onmousedown="hideBtnSP()"/>
+            <div id="divSP" class="center"  style="display:none">
+                <input type="button" id="btnSavePosition" value="Save It" onclick="SaveIt()" class="btn btn-success-outline"/>
             </div>
 
-        </div>-->
+        </div>
 
 
-
-
+        <!--                        </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+        
+                </div>-->
 
 
     </body>
