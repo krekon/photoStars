@@ -56,8 +56,72 @@ and open the template in the editor.
                     {
                         var kati=0;
                     }
+//                    
+//                    var imgWidth = document.getElementById("dragThis").style.width;
+//                var imgHeight = document.getElementById("dragThis").style.height;
+//                
+//                $('#mainImage').css('maxWidth', imgWidth);
+//                $('#mainImage').css('maxHeight', imgHeight);
+//                    
+
+
+                    var image_url = $('#mainImage').css('background-image'),
+                        image;
+
                     
+                    image_url = image_url.match(/^url\("?(.+?)"?\)$/);
+
+                    if (image_url[1]) {
+                        image_url = image_url[1];
+                        image = new Image();
+
+                        
+                        $(image).load(function () {
+                            
+                            if(image.width < image.height){
+                                newW = $('#mainImage').width();
+                                newH = image.height / image.width * newW;
+                                newW = image.width / image.height * newH;
+                            }else{
+                                newH = $('#mainImage').height();
+                                newW = image.width / image.height * newH;     
+                            }
+                            
+//                            addNewStyle('#mainImage{width:'+newW.toFixed(0)+' !important;height:'+newH.toFixed(0)+' !important;}');
+                            
+                            
+                            $(".mymainimage").css("height",newH.toFixed(0));
+                            $(".mymainimage").css("width",newW.toFixed(0));
+                            
+                            
+                            document.getElementById("mainImage").style.width = newW.toFixed(0);  
+                            document.getElementById("mainImage").style.height = newH.toFixed(0);
+                        });
+                        
+                        
+                        
+//                        function addNewStyle(newStyle) {
+//                                var styleElement = document.getElementById('mainImage');
+//                                if (!styleElement) {
+//                                    styleElement = document.createElement('mainImage');
+//                                    styleElement.type = 'text/css';
+//                                    styleElement.id = 'mainImage';
+//                                    document.getElementsByTagName('head')[0].appendChild(styleElement);
+//                                }
+//                                styleElement.appendChild(document.createTextNode(newStyle));
+//                            }
+
+                            
+
+                        image.src = image_url;
+                    }
+
+
+
+
+
                 }    
+                
                 
                 
 
@@ -65,6 +129,14 @@ and open the template in the editor.
 
                 $("#dragThis").attr("src",image1url);
                 document.getElementById("mainImage").style.backgroundImage = "url("+image2url+")";
+//                document.getElementById("mainImage").style.maxHeight = "initial";
+//                document.getElementById("mainImage").style.maxWidth = "initial";
+//                
+                var imgWidth = document.getElementById("dragThis").style.width;
+                var imgHeight = document.getElementById("dragThis").style.height;
+                
+                $('#mainImage').css('maxWidth', imgWidth);
+                $('#mainImage').css('maxHeight', imgHeight);
                  
                 $('#dragThis').draggable(
                         {

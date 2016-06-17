@@ -14,20 +14,31 @@ html, body {
 
             }
 
-.mymainimage{
-    display: inline-block;
-  height: calc(20% - 2px);
-  width: calc(20% - 2px);
-  background: #ddd no-repeat center center;
+#mainImage{
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+  background: red no-repeat center center;
   background-size: contain;
   margin: 1px;
+  
 }
 
-/*#divSP{
+.NEWmymainimage{
+  display: inline-block;
+  
+  background: red no-repeat center center;
+  background-size: contain;
+  margin: 1px;
+  
+}
+
+
+#divSP{
     position: relative;
     left: 5%;
     top: 5%;
-}*/
+}
 
 .top{top:0}
 .middle{top:50%;margin-top:-10px;}
