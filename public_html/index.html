@@ -1,136 +1,570 @@
+<!-- FlatFy Theme - Andrea Galanti /-->
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" type="text/css">
-        <link rel="stylesheet" href="css/main.css" type="text/css">
-        <link rel="stylesheet" href="bower_components/bootstrap-fileinput/css/fileinput.css" type="text/css">
-        
-        
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="bower_components/bootstrap-fileinput/css/fileinput.min.css" media="all" type="text/css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="bower_components/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js" type="text/javascript"></script>
-        <script src="bower_components/bootstrap-fileinput/js/plugins/sortable.min.js" type="text/javascript"></script>
-        <script src="bower_components/bootstrap-fileinput/js/plugins/purify.min.js" type="text/javascript"></script>
-         <script src="bower_components/bootstrap-fileinput/js/fileinput.min.js" type="text/javascript"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
-         <script src="bower_components/bootstrap-fileinput/themes/fa/fa.js" type="text/javascript"></script>
-        
-        
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>');</script>
-        <script src="js/main.js"></script>
-        <script src="bower_components/bootstrap-fileinput/js/fileinput.js" type="text/javascript"></script>
-       
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="Flatfy Free Flat and Responsive HTML5 Template ">
+        <meta name="author" content="">
 
-        
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
-        
-        
+        <title>BitAmulet</title>
 
-        
-        
-        
-        
-        
-        <script>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-            $(document).ready(function() {
+        <!-- Custom Google Web Font -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 
-                    $("#input-ficons-4").fileinput({
-                            uploadUrl: "/file-upload-batch/2",
-                            previewFileIcon: '<i class="fa fa-file"></i>',
-                            allowedPreviewTypes: ['image'], // disable preview of standard types
-                            allowedPreviewMimeTypes: ['image/jpeg', 'text/javascript'], // allow content to be shown only for certain mime types 
-                            previewFileIconSettings: {
-                                'docx': '<i class="fa fa-file-word-o text-primary"></i>',
-                                'xls': '<i class="fa fa-file-excel-o text-success"></i>',
-                                'xlsx': '<i class="fa fa-file-excel-o text-success"></i>',
-                                'pptx': '<i class="fa fa-file-powerpoint-o text-danger"></i>',
-                                'pdf': '<i class="fa fa-file-pdf-o text-danger"></i>',
-                                'zip': '<i class="fa fa-file-archive-o text-muted"></i>'
-                            }
-                        });
-            
-            });
-        </script>
+        <!-- Custom CSS-->
+        <link href="css/general.css" rel="stylesheet">
 
+        <!-- Owl-Carousel -->
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/owl.carousel.css" rel="stylesheet">
+        <link href="css/owl.theme.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
 
+        <!-- Magnific Popup core CSS file -->
+        <link rel="stylesheet" href="css/magnific-popup.css"> 
+
+        <script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->
+        <!--[if IE 9]>
+                <script src="js/PIE_IE9.js"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+                <script src="js/PIE_IE678.js"></script>
+        <![endif]-->
+
+        <!--[if lt IE 9]>
+                <script src="js/html5shiv.js"></script>
+        <![endif]-->
 
     </head>
-    <body>
 
+    <body id="home">
 
+        <!-- Preloader -->
+        <div id="preloader">
+            <div id="status"></div>
+        </div>
 
+        <!-- FullScreen -->
+        <div class="intro-header">
+            <div class="col-xs-12 text-center abcen1">
+                <h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">Bit Amulet</h1>
+                <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">Create your BitAmulet now!</h3>
+                <div style=" margin-top:50px;">
+                    <a href="UploadPhoto.html" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s"><span class="network-name">Begin!</span></a>
+                </div>   
+            </div>    
+            <!-- /.container -->
+            <div class="col-xs-12 text-center abcen wow fadeIn">
+                <div class="button_down "> 
+                    <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#whatis"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
+                </div>
+            </div>
+        </div>
 
-        <div class="container">
+        <!-- NavBar-->
+        <nav class="navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#home">BitAmulet</a>
+                </div>
 
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
 
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
+                        <li class="menuItem"><a href="#whatis">Science</a></li>                        
+                        <li class="menuItem"><a href="#museum">Museum</a></li>
+                        <li class="menuItem"><a href="#credits">Credits</a></li>
+                        <li class="menuItem"><a href="#downloadlink">Follow us</a></li>
+                    </ul>
+                </div>
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Modal Header</h4>
+            </div>
+        </nav> 
+
+        <!-- What is -->
+        <div id="whatis" class="content-section-b" style="border-top: 0">
+            <div class="container">
+
+                <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                    <h2>Science</h2>
+                    <p class="lead" style="margin-top:0">BitAmulets are not just icon. Each one is exclusively generated for each user based on:</p>
+
+                </div>
+
+                <div class="row image-section">
+
+                    <div class="col-sm-4 wow fadeInDown text-center">
+                        <img class="rotate" src="img/icon/sun.png" alt="Science">
+                        <h3>Endowed by Nature</h3>
+                        <p class="lead">BitAmulets are not just icon. Each one is exclusively generated for each user based on:</p>
+
+                        <div class="lead">
+                            <ul style="list-style:disc;" class="thename">
+                                <li>the name</li>
+                                <li>the year of birth</li>
+                                <li>the date and time of the request</li> 
+                                <li>the position of all stars in our solar system and their distance from earth in relation to the exact position of the user on earth.</li>
+                            </ul>
                         </div>
-                        <div class="modal-body">
-                            <p>Some text in the modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+                        <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+
+                    <div class="col-sm-4 wow fadeInDown text-center">
+                        <img  class="rotate" src="img/icon/jupiter.png" alt="">
+                        <h3>Power of our solar system</h3>
+                        <p class="lead">We have used the power of our solar system to work for the interest of the users. Apparently, there is no direct, significantly verified relation between the position of the planets and our luck or destiny. BitAmulets do not, under no circumstances, support such a thesis. We justify the chances that our life is affected by something - if anything but pure luck - and we try to combat this unpredictability with the most powerful constant. </p>
+
+
+                        <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+
+                    <div class="col-sm-4 wow fadeInDown text-center">
+                        <img  class="rotate" src="img/icon/cronus.png" alt="">
+                        <h3>Solar System Positioning</h3>
+                        <p class="lead">Accepting that the solar system could have any affect to our life, we leverage this chance with the most appropriate and scientific manner. </p>
+                        <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+
+                </div><!-- /.row -->
+
+                <div class="row tworow">
+
+                    <div class="col-sm-4  wow fadeInDown text-center">
+                        <img class="rotate" src="img/icon/mercury.png" alt="Generic placeholder image">
+                        <h3>Heliocentric Frame</h3>
+                        <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. </p>
+                        <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+
+                    <div class="col-sm-4 wow fadeInDown text-center">
+                        <img  class="rotate" src="img/icon/uranus.png" alt="Generic placeholder image">
+                        <h3>Location of the observer</h3>
+                        <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. </p>
+                        <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+
+                    <div class="col-sm-4 wow fadeInDown text-center">
+                        <img  class="rotate" src="img/icon/neptune.png" alt="Generic placeholder image">
+                        <h3>Time</h3>
+                        <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla congolium sic ad nauseum. </p>
+                        <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+                    </div><!-- /.col-lg-4 -->
+
+                </div><!-- /.row -->
+            </div>
+        </div>
+
+
+        <!-- museum -->
+        <div id="museum" class="content-section-b">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
+                        <h2>Museum</h2>
+                        <p class="lead" style="margin-top:0"></p>
+                    </div>
+                </div>
+                <div class="row wow bounceInUp" >
+                    <div id="owl-demo" class="owl-carousel">
+
+                        <a href="img/museum-img/m1.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m1.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/museum-img/m2.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m2.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/museum-img/m3.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m3.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/museum-img/m4.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m4.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/museum-img/m5.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m5.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/museum-img/m6.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m6.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/m1useum-img/m11.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m11.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/m1useum-img/m12.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m12.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/m1useum-img/m13.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m13.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/m1useum-img/m14.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m14.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/m1useum-img/m15.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m15.png" alt="a bitamulet">
+                            </div>
+                        </a>
+
+                        <a href="img/m1useum-img/m16.png" class="image-link">
+                            <div class="item">
+                                <img  class="img-responsive img-rounded" src="img/museum-img/m16.png" alt="a bitamulet">
+                            </div>
+                        </a>
+                    </div>       
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="content-section-b"> 
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 wow fadeInLeftBig">
+                        <div id="owl-demo-1" class="owl-carousel">
+                            <a href="img/iphone.png" class="image-link">
+                                <div class="item">
+                                    <img  class="img-responsive img-rounded" src="img/iphone.png" alt="">
+                                </div>
+                            </a>
+                            <a href="img/iphone.png" class="image-link">
+                                <div class="item">
+                                    <img  class="img-responsive img-rounded" src="img/iphone.png" alt="">
+                                </div>
+                            </a>
+                            <a href="img/iphone.png" class="image-link">
+                                <div class="item">
+                                    <img  class="img-responsive img-rounded" src="img/iphone.png" alt="">
+                                </div>
+                            </a>
+                        </div>       
                     </div>
 
+                    <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">   
+                        <h3 class="section-heading">Drag Gallery</h3>
+                        <div class="sub-title lead3">Lorem ipsum dolor sit atmet sit dolor greand fdanrh<br> sdfs sit atmet sit dolor greand fdanrh sdfs</div>
+                        <p class="lead">
+                            In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. 
+                            Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, 
+                            uam non erat mirum sapientiae lorem cupido
+                            patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.
+                        </p>
+
+                        <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a> 
+                            <a class="btn btn-embossed btn-info" href="#" role="button">Visit Website</a></p>
+                    </div>  			
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section-a">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-sm-6 pull-right wow fadeInRightBig">
+                        <img class="img-responsive " src="img/doge.png" alt="">
+                    </div>
+
+                    <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+                        <h3 class="section-heading">Font Awesome & Glyphicon</h3>
+                        <p class="lead">A special thanks to Death to the Stock Photo for 
+                            providing the photographs that you see in this template. 
+                        </p>
+
+                        <ul class="descp lead2">
+                            <li><i class="glyphicon glyphicon-signal"></i> Reliable and Secure Platform</li>
+                            <li><i class="glyphicon glyphicon-refresh"></i> Everything is perfectly orgainized for future</li>
+                            <li><i class="glyphicon glyphicon-headphones"></i> Attach large file easily</li>
+                        </ul>
+                    </div>           
                 </div>
             </div>
 
         </div>
 
 
-
-        <div class="file-input-ajax-new">
-            <div class="kv-upload-progress hide"><div class="progress">
-                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
-                        0%
+        <div  class="content-section-c ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center white">
+                        <h2>Get Live Updates</h2>
+                        <p class="lead" style="margin-top:0">A special thanks to Death.</p>
                     </div>
-                </div></div>
-            <div class="input-group file-caption-main">
-                
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <div class="mockup-content">
+                            <div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1">
+                                <button type="button "><span>Subscribe to our Newsletter</span></button>
+                                <div class="morph-content">
+                                    <div>
+                                        <div class="content-style-form content-style-form-4 ">
+                                            <h2 class="morph-clone">Subscribe to our Newsletter</h2>
+                                            <form>
+                                                <p><label>Your Email Address</label><input type="text"/></p>
+                                                <p><button>Subscribe me</button></p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                </div>>
+            </div>
+        </div>	
 
-                <div class="input-group-btn">
-                    <button type="button" tabindex="500" title="Clear selected files" class="btn btn-default fileinput-remove-button"><i class="glyphicon glyphicon-trash"></i>  <span class="hidden-xs">Remove</span></button>
-                    <button type="button" tabindex="500" title="Abort ongoing upload" class="btn btn-default hide fileinput-cancel fileinput-cancel-button"><i class="glyphicon glyphicon-ban-circle"></i>  <span class="hidden-xs">Cancel</span></button>
-                    <a href="/file-upload-batch/2" tabindex="500" title="Upload selected files" class="btn btn-default fileinput-upload fileinput-upload-button"><i class="glyphicon glyphicon-upload"></i>  <span class="hidden-xs">Upload</span></a>
-                    <!--<div tabindex="500" class="btn btn-primary btn-file">-->
-                        <input id="input-ficons-4" name="inputficons4[]" multiple="" type="file" accept=".jpg,.gif,.png" class="">
-                    <!--</div>-->
+        <!-- Credits -->
+        <div id="credits" class="content-section-a">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                        <h2>Credits</h2>
+                        <p class="lead" style="margin-top:0">A special thanks to Death.</p>
+                    </div>
+
+                    <div class="col-sm-6  block wow bounceIn">
+                        <div class="row">
+                            <div class="col-md-4 box-icon rotate"> 
+                                <i class="fa fa-desktop fa-4x "> </i> 
+                            </div>
+                            <div class="col-md-8 box-ct">
+                                <h3> Bootstrap </h3>
+                                <p> Lorem ipsum dolor sit ametconsectetur adipiscing elit. Suspendisse orci quam. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 block wow bounceIn">
+                        <div class="row">
+                            <div class="col-md-4 box-icon rotate"> 
+                                <i class="fa fa-picture-o fa-4x "> </i> 
+                            </div>
+                            <div class="col-md-8 box-ct">
+                                <h3> Owl-Carousel </h3>
+                                <p> Nullam mo  arcu ac molestie scelerisqu vulputate, molestie ligula gravida, tempus ipsum.</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row tworow">
+                    <div class="col-sm-6  block wow bounceIn">
+                        <div class="row">
+                            <div class="col-md-4 box-icon rotate"> 
+                                <i class="fa fa-magic fa-4x "> </i> 
+                            </div>
+                            <div class="col-md-8 box-ct">
+                                <h3> Codrops </h3>
+                                <p> Lorem ipsum dolor sit ametconsectetur adipiscing elit. Suspendisse orci quam. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 block wow bounceIn">
+                        <div class="row">
+                            <div class="col-md-4 box-icon rotate"> 
+                                <i class="fa fa-heart fa-4x "> </i> 
+                            </div>
+                            <div class="col-md-8 box-ct">
+                                <h3> Lorem Ipsum</h3>
+                                <p> Nullam mo  arcu ac molestie scelerisqu vulputate, molestie ligula gravida, tempus ipsum.</p> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>			
+        </div>
+
+        <!-- Banner Download -->
+        <div id="downloadlink" class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                        <h2>Follow us</h2>
+                        <p class="lead" style="margin-top:0"></p>
+                        <p ><a href="www.facebook.com/bitamulet" target="_blank" class="btn btn-embossed btn-primary view" role="button"><i class="fa fa-facebook-square"></i> Follow Us on Facebook</a></p>
+                        <p><a href="www.twitter.com/bitamulet" target="_blank" class="btn btn-embossed btn-primary view" role="button"><i class="fa fa-twitter"></i> Follow Us on Twitter</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div id="contact" class="content-section-a">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 col-md-offset-3 text-center wrap_title">
+                        <h2>Contact Us</h2>
+                        <p class="lead" style="margin-top:0">A special thanks to Death.</p>
+                    </div>
+
+                    <form role="form" action="" method="post" >
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="InputName">Your Name</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputEmail">Your Email</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="InputMessage">Message</label>
+                                <div class="input-group">
+                                    <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                                </div>
+                            </div>
+
+                            <input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right">
+                        </div>
+                    </form>
+
+                    <hr class="featurette-divider hidden-lg">
+                    <div class="col-md-5 col-md-push-1 address">
+                        <address>
+                            <h3>Office Location</h3>
+                            <p class="lead"><a href="https://www.google.com/maps/preview?ie=UTF-8&q=The+Pentagon&fb=1&gl=us&hq=1400+Defense+Pentagon+Washington,+DC+20301-1400&cid=12647181945379443503&ei=qmYfU4H8LoL2oATa0IHIBg&ved=0CKwBEPwSMAo&safe=on">The Pentagon<br>
+                                    Washington, DC 20301</a><br>
+                                Phone: XXX-XXX-XXXX<br>
+                                Fax: XXX-XXX-YYYY</p>
+                        </address>
+
+                        <h3>Social</h3>
+                        <li class="social"> 
+                            <a href="#"><i class="fa fa-facebook-square fa-size"> </i></a>
+                            <a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a> 
+                            <a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>
+                            <a href="#"><i class="fa fa-flickr fa-size"> </i> </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3 class="footer-title">Follow Me!</h3>
+                        <p>Vuoi ricevere news su altri template?<br/>
+                            Visita Andrea Galanti.it e vedrai tutte le news riguardanti nuovi Theme!<br/>
+                            Go to: <a  href="http://andreagalanti.it" target="_blank">andreagalanti.it</a>
+                        </p>
+
+                        <!-- LICENSE -->
+                        <a rel="cc:attributionURL" href="http://www.andreagalanti.it/flatfy"
+                           property="dc:title">Flatfy Theme </a> by
+                        <a rel="dc:creator" href="http://www.andreagalanti.it"
+                           property="cc:attributionName">Andrea Galanti</a>
+                        is licensed to the public under 
+                        <BR>the <a rel="license"
+                                   href="http://creativecommons.org/licenses/by-nc/3.0/it/deed.it">Creative
+                            Commons Attribution 3.0 License - NOT COMMERCIAL</a>.
+
+
+                    </div> <!-- /col-xs-7 -->
+
+                    <div class="col-md-5">
+                        <div class="footer-banner">
+                            <h3 class="footer-title">Flatfy Theme</h3>
+                            <ul>
+                                <li>12 Column Grid Bootstrap</li>
+                                <li>Form Contact</li>
+                                <li>Drag Gallery</li>
+                                <li>Full Responsive</li>
+                                <li>Lorem Ipsum</li>
+                            </ul>
+                            Go to: <a href="http://andreagalanti.it/flatfy" target="_blank">andreagalanti.it/flatfy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/owl.carousel.js"></script>
+        <script src="js/script.js"></script>
+        <!-- StikyMenu -->
+        <script src="js/stickUp.min.js"></script>
+        <script type="text/javascript">
+            jQuery(function ($) {
+                $(document).ready(function () {
+                    $('.navbar-default').stickUp();
+
+                });
+            });
+
+        </script>
+        <!-- Smoothscroll -->
+        <script type="text/javascript" src="js/jquery.corner.js"></script> 
+        <script src="js/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script src="js/classie.js"></script>
+        <script src="js/uiMorphingButton_inflow.js"></script>
+        <!-- Magnific Popup core JS file -->
+        <script src="js/jquery.magnific-popup.js"></script> 
     </body>
+
 </html>
