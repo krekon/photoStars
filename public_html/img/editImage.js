@@ -128,7 +128,7 @@
                     $(function () {
 
                         image1url = "img/amulet.png";
-                        image2url = "img/couple-vacation-tropical-lgn.jpg";
+                        image2url = "img/demo/couple-vacation-tropical-lgn.jpg";
                         makeimage(image1url, image2url);
 
                         divTouchImg();

@@ -1140,7 +1140,7 @@ input[type="search"] {
 label {
     font-weight: normal;
     font-size: 15px;
-    line-height: 2.4;
+    /*line-height: 2.4;*/
 }
 .form-control:-moz-placeholder {
     color: #b2bcc5;
@@ -1733,11 +1733,11 @@ fieldset[disabled] .input-group-btn .btn-default.active {
     font-size: 14px;
     line-height: 1.5;
 }
-.checkbox input,
+/*.checkbox input,
 .radio input {
     outline: none !important;
     display: none;
-}
+}*/
 .checkbox .icons,
 .radio .icons {
     color: #bdc3c7;
