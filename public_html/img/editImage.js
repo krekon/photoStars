@@ -93,8 +93,8 @@
                         var imgWidth = document.getElementById("dragThis").style.width;
                         var imgHeight = document.getElementById("dragThis").style.height;
 
-                        $('#mainImage').css('maxWidth', imgWidth);
-                        $('#mainImage').css('maxHeight', imgHeight);
+//                        $('#mainImage').css('maxWidth', imgWidth);
+//                        $('#mainImage').css('maxHeight', imgHeight);
 
                         $('#dragThis').draggable(
                                 {
@@ -111,8 +111,8 @@
 
                                 });
 
-                        $('#mymainimage').css({height: "100%",
-                            width: "100%"});
+//                        $('#mymainimage').css({height: "100%",
+//                            width: "100%"});
                         $(window).resize(function () {
                             $('#mymainimage').css({height: "100%",
                                 width: "100%"});

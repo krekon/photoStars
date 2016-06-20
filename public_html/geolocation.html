@@ -30,7 +30,27 @@ and open the template in the editor.
           center: {lat: -34.397, lng: 150.644},
           zoom: 8
         });
+        
+        var marker = new google.maps.Marker
+        (
+            {
+                position: new google.maps.LatLng(-34.397, 150.644),
+                map: map,
+                title: 'Click me'
+            }
+        );
+
+        var infowindow = new google.maps.InfoWindow({
+            content: 'Location info:<br/>Country Name:<br/>LatLng:'
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+        // Calling the open method of the infoWindow 
+        infowindow.open(map, marker);
+    });
+
       }
+      window.onload = initialize;
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm07xD-WEXUSpIf9Zu8vNT5y5HrKjOCa0&callback=initMap"
     async defer></script>
