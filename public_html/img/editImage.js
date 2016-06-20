@@ -43,7 +43,9 @@
                         }
 
                     }
-
+                    
+                    
+                   
                     function divTouchImg()
                     {
                         var image_url = $('#mainImage').css('background-image'),
@@ -58,7 +60,12 @@
 
 
                             $(image).load(function () {
-
+                                
+                                imgW = image.width;
+                                imgH = image.height;
+                               
+                                $('#mainImage').css('width', image.width);
+                                $('#mainImage').css('height', image.height);
 
                                 middleW = $('#mainImage').width();
                                 newH = image.height / image.width * middleW;
@@ -66,17 +73,10 @@
                                 middleH = $('#mainImage').height();
                                 newW = image.width / image.height * middleH;
 
-
-                                $(".mymainimage").css("height", newH.toFixed(0));
-                                $(".mymainimage").css("width", newW.toFixed(0));
-                                $(".mymainimage").css("position", "static");
-                                $(".mymainimage").css("top", "50%");
-                                $(".mymainimage").css("left", "50%");
-
-                                //                        $("#dragThis").css("position", "relative");
-                                //                        $("#dragThis").css("top", "-35%");
-                                //                        $("#dragThis").css("left", "5%");
-
+                                
+                                $("#mainImage").css("height", newH.toFixed(0));
+                                $("#mainImage").css("width", newW.toFixed(0));
+                    
 
                             });
 
@@ -90,12 +90,8 @@
                         $("#dragThis").attr("src", image1url);
                         document.getElementById("mainImage").style.backgroundImage = "url(" + image2url + ")";
 
-                        var imgWidth = document.getElementById("dragThis").style.width;
-                        var imgHeight = document.getElementById("dragThis").style.height;
 
-//                        $('#mainImage').css('maxWidth', imgWidth);
-//                        $('#mainImage').css('maxHeight', imgHeight);
-
+                        
                         $('#dragThis').draggable(
                                 {
                                     drag: function ()
@@ -114,7 +110,7 @@
 //                        $('#mymainimage').css({height: "100%",
 //                            width: "100%"});
                         $(window).resize(function () {
-                            $('#mymainimage').css({height: "100%",
+                            $('.mymainimage').css({height: "100%",
                                 width: "100%"});
 
                         });
@@ -128,7 +124,8 @@
                     $(function () {
 
                         image1url = "img/amulet.png";
-                        image2url = "img/demo/couple-vacation-tropical-lgn.jpg";
+                        image2url = "img/demo/couple-vacation-tropical-lgn.jpg";                    
+                        
                         makeimage(image1url, image2url);
 
                         divTouchImg();

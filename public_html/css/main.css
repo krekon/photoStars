@@ -12,15 +12,17 @@ html, body {
     padding: 0;
 }
 
-
+#imgPro
+{
+    text-align: center;
+}
 
 #mainImage{
     display: inline-block;
     max-height: 100%;
     max-width: 100%;
-    background: red no-repeat center center;
     background-size: contain;
-    margin: 1px;
+    margin: 0px;
     background-repeat: no-repeat;
 
 }
