@@ -123,8 +123,8 @@
 
                     $(function () {
 
-                        image1url = "img/amulet.png";
-                        image2url = "img/demo/couple-vacation-tropical-lgn.jpg";                    
+                        image1url = "img/demo/amulet96.png";
+                        image2url = "img/demo/Bugatti-Chiron-2016.jpg";                    
                         
                         makeimage(image1url, image2url);
 
