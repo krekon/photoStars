@@ -61,23 +61,24 @@
 
                             $(image).load(function () {
                                 
-                                imgW = image.width;
-                                imgH = image.height;
-                               
+                                 
                                 $('#mainImage').css('width', image.width);
                                 $('#mainImage').css('height', image.height);
+                                
+                                $('#mainImage').css({width: "100%",
+                                                    height: "100%"});
+                                
 
-                                middleW = $('#mainImage').width();
-                                newH = image.height / image.width * middleW;
+                                var middleW = $('#mainImage').width();
+                                var newH = image.height / image.width * middleW;
 
-                                middleH = $('#mainImage').height();
-                                newW = image.width / image.height * middleH;
+                                var middleH = $('#mainImage').height();
+                                var newW = image.width / image.height * middleH;
 
                                 
                                 $("#mainImage").css("height", newH.toFixed(0));
                                 $("#mainImage").css("width", newW.toFixed(0));
                     
-
                             });
 
                             image.src = image_url;
@@ -90,25 +91,28 @@
                         $("#dragThis").attr("src", image1url);
                         document.getElementById("mainImage").style.backgroundImage = "url(" + image2url + ")";
 
-
+                        divTouchImg();
                         
                         $('#dragThis').draggable(
                                 {
                                     drag: function ()
                                     {
-                                        var offset = $(this).offset();
-                                        var xPos = offset.left;
-                                        var yPos = offset.top;
+                                        var $this = $(this);
+                                        var thisPos = $this.position();
+                                        var parentPos = $this.parent().position();
 
-                                        finalposition.width = xPos;
-                                        finalposition.height = yPos;
+                                        var x = thisPos.left - parentPos.left;
+                                        var y = thisPos.top - parentPos.top;
+
+
+                                        finalposition.width = x;
+                                        finalposition.height = y;
                                     },
                                     containment: "parent"
 
                                 });
-
-//                        $('#mymainimage').css({height: "100%",
-//                            width: "100%"});
+                                
+    
                         $(window).resize(function () {
                             $('.mymainimage').css({height: "100%",
                                 width: "100%"});
@@ -117,18 +121,31 @@
 
                     }
 
+                    function dragging()
+                    {
+                        var $this = $("#dragThis");
+                        var thisPos = $this.position();
+                        var parentPos = $this.parent().position();
 
+                        var x = thisPos.left - parentPos.left;
+                        var y = thisPos.top - parentPos.top;
+
+
+                        finalposition.width = x;
+                        finalposition.height = y;
+                    }
 
 
 
                     $(function () {
+                        
 
                         image1url = "img/demo/amulet96.png";
-                        image2url = "img/demo/Bugatti-Chiron-2016.jpg";                    
+                        image2url = "img/slide/2.png";                    
                         
                         makeimage(image1url, image2url);
 
-                        divTouchImg();
+                        
 
 
                         var windowWidth = $(window).width();
@@ -138,5 +155,10 @@
                                 return;
                             }
                         });
+                        
+                        $(window).bind("load", function() {
+                            divTouchImg();
+                            dragging();
+                         });
 
                     });
