@@ -1,13 +1,18 @@
 
                     var finalposition = {
                         width: 0,
-                        height: 0
+                        height: 0,
+                        relIconWidth: 0,
+                        relIconHeight: 0
                     };
 
                     function SaveIT()
                     {
                         finalposition.width;
                         finalposition.height;
+                        finalposition.relIconWidth;
+                        finalposition.relIconHeight;
+                        
                     }
 
                     function hideBtnSP() {
@@ -65,17 +70,12 @@
                                 $('#mainImage').css('width', image.width);
                                 $('#mainImage').css('height', image.height);
                                 
-                                $('#mainImage').css({width: "100%",
-                                                    height: "100%"});
-                                
-
-                                var middleW = $('#mainImage').width();
+                                var middleW = document.getElementById("mainImage").clientWidth;
                                 var newH = image.height / image.width * middleW;
 
-                                var middleH = $('#mainImage').height();
+                                var middleH = document.getElementById("mainImage").clientHeight;
                                 var newW = image.width / image.height * middleH;
 
-                                
                                 $("#mainImage").css("height", newH.toFixed(0));
                                 $("#mainImage").css("width", newW.toFixed(0));
                     
@@ -101,8 +101,8 @@
                                         var thisPos = $this.position();
                                         var parentPos = $this.parent().position();
 
-                                        var x = thisPos.left - parentPos.left;
-                                        var y = thisPos.top - parentPos.top;
+                                        var x = (thisPos.left - parentPos.left)/document.getElementById("mainImage").clientWidth;
+                                        var y = (thisPos.top - parentPos.top)/document.getElementById("mainImage").clientHeight;
 
 
                                         finalposition.width = x;
@@ -120,15 +120,21 @@
                         });
 
                     }
+                    
+                    function RelativeIconDimensions()
+                    {
+                        finalposition.relIconWidth = document.getElementById("dragThis").clientWidth/document.getElementById("mainImage").clientWidth;
+                        finalposition.relIconHeight = document.getElementById("dragThis").clientHeight/document.getElementById("mainImage").clientHeight;
+                    }
 
-                    function dragging()
+                    function startingPosition()
                     {
                         var $this = $("#dragThis");
                         var thisPos = $this.position();
                         var parentPos = $this.parent().position();
 
-                        var x = thisPos.left - parentPos.left;
-                        var y = thisPos.top - parentPos.top;
+                        var x = (thisPos.left - parentPos.left)/document.getElementById("mainImage").clientWidth;
+                        var y = (thisPos.top - parentPos.top)/document.getElementById("mainImage").clientHeight;
 
 
                         finalposition.width = x;
@@ -141,7 +147,7 @@
                         
 
                         image1url = "img/demo/amulet96.png";
-                        image2url = "img/slide/2.png";                    
+                        image2url = "img/demo/Bugatti-Chiron-2016.jpg";                    
                         
                         makeimage(image1url, image2url);
 
@@ -157,8 +163,8 @@
                         });
                         
                         $(window).bind("load", function() {
-                            divTouchImg();
-                            dragging();
+                            RelativeIconDimensions();
+                            startingPosition();
                          });
 
                     });

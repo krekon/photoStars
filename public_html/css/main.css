@@ -21,7 +21,6 @@ html, body {
     display: inline-block;
     max-height: 100%;
     max-width: 100%;
-    background: red;
     background-size: contain;
     margin: 0px;
     background-repeat: no-repeat;
