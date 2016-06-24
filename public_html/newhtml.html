@@ -76,7 +76,7 @@
                         <li class="menuItem"><a href="#credits">Credits</a></li>
                         <li class="menuItem"><a href="#downloadlink">Follow us</a></li>
                     </ul>
-                     <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                             <ul id="login-dp" class="dropdown-menu">
@@ -138,20 +138,19 @@
                         <p class="lead" style="margin-top:0"></p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="cont">
                     <div class="col-sm-12" id="imgPro">
-                        <div id="mainImage">
-                            <img id="dragThis" src="" alt=""/>
-                        </div>
+                        <canvas id="cnvs"></canvas>
+                        <img id="dragThis" src="" alt=""/>
                     </div>
 
                 </div>
-
-                <input type="submit" name="submit" id="submit" value="Save It" onclick="window.location = 'login.html'" class="btn wow tada btn-embossed btn-primary pull-right">
+                <br>
+                <input type="submit" name="submit" id="submit" value="Save It" onclick="SaveIT(); window.location = 'login.html'" class="btn wow tada btn-embossed btn-primary pull-right">
             </div>
         </div>
-        
-        
+
+
 
         <!-- ^^^^^^^^^ -->
         <!-- /DONE WORK HERE -->
@@ -177,6 +176,6 @@
         <script src="js/classie.js"></script>        
         <!-- Magnific Popup core JS file -->
         <script src="js/jquery.magnific-popup.js"></script> 
-        
+
     </body>
 </html>
