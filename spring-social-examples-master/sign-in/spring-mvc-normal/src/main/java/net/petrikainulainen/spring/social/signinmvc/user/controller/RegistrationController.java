@@ -1,5 +1,6 @@
 package net.petrikainulainen.spring.social.signinmvc.user.controller;
 
+import javax.inject.Inject;
 import net.petrikainulainen.spring.social.signinmvc.security.util.SecurityUtil;
 import net.petrikainulainen.spring.social.signinmvc.user.dto.RegistrationForm;
 import net.petrikainulainen.spring.social.signinmvc.user.model.SocialMediaService;
@@ -24,12 +25,15 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.validation.Valid;
+import org.springframework.social.connect.ConnectionFactoryLocator;
+import org.springframework.social.connect.UsersConnectionRepository;
+import org.springframework.social.connect.web.ConnectController;
 
 /**
  * @author Petri Kainulainen
  */
 @Controller
-@SessionAttributes("user")
+//@SessionAttributes("user")
 public class RegistrationController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RegistrationController.class);
@@ -38,26 +42,36 @@ public class RegistrationController {
     protected static final String MODEL_NAME_REGISTRATION_DTO = "user";
     protected static final String VIEW_NAME_REGISTRATION_PAGE = "user/registrationForm";
 
+    
+    private ProviderSignInUtils providerSignInUtils;
     private UserService service;
 
     @Autowired
     public RegistrationController(UserService service) {
-        this.service = service;
-    }
-
+    this.providerSignInUtils = new ProviderSignInUtils();
+    this.service = service;
+}
+    
+    
+  
+    
+    
     /**
      * Renders the registration page.
+     * @return 
      */
+
+
     @RequestMapping(value = "/user/register", method = RequestMethod.GET)
-    public String showRegistrationForm(WebRequest request, Model model) {
+    public String showRegistrationForm( Model model) {
         LOGGER.debug("Rendering registration page.");
 
-        Connection<?> connection = ProviderSignInUtils.getConnection(request);
-
-        RegistrationForm registration = createRegistrationDTO(connection);
-        LOGGER.debug("Rendering registration form with information: {}", registration);
-
-        model.addAttribute(MODEL_NAME_REGISTRATION_DTO, registration);
+//        Connection<?> connection = providerSignInUtils.getConnectionFromSession(request);
+//
+//        RegistrationForm registration = createRegistrationDTO(connection);
+//        LOGGER.debug("Rendering registration form with information: {}", registration);
+//
+        model.addAttribute(MODEL_NAME_REGISTRATION_DTO,new RegistrationForm());
 
         return VIEW_NAME_REGISTRATION_PAGE;
     }
@@ -88,6 +102,7 @@ public class RegistrationController {
     /**
      * Processes the form submissions of the registration form.
      */
+    
     @RequestMapping(value ="/user/register", method = RequestMethod.POST)
     public String registerUserAccount(@Valid @ModelAttribute("user") RegistrationForm userAccountData,
                                       BindingResult result,
