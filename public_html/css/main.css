@@ -12,12 +12,26 @@ html, body {
     padding: 0;
 }
 
+#cnvs{display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+    background-size: contain;
+    margin: 0px;
+    background-repeat: no-repeat;}
+
 #imgPro
 {
     text-align: center;
+    line-height:0;
+    padding: 0px;
 }
 
-#mainImage{
+#cont{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*#mainImage{
     display: inline-block;
     max-height: 100%;
     max-width: 100%;
@@ -25,7 +39,7 @@ html, body {
     margin: 0px;
     background-repeat: no-repeat;
 
-}
+}*/
 
 
 #divSP{
