@@ -19,7 +19,7 @@
         <liquibase.version>3.1.1</liquibase.version>
         <mysql.connector.version>5.1.26</mysql.connector.version>
         <slf4j.version>1.7.5</slf4j.version>
-        <spring.version>4.3.0.RELEASE</spring.version>
+        <spring.version>4.0.0.RELEASE</spring.version>
         <spring.data.jpa.version>1.4.3.RELEASE</spring.data.jpa.version>
         <spring.security.version>3.2.0.RELEASE</spring.security.version>
         <spring.social.version>1.1.0.RELEASE</spring.social.version>
@@ -196,12 +196,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.1</version>
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <showDeprecation>false</showDeprecation>
+                    <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
             <plugin>
@@ -370,6 +370,28 @@
             <artifactId>spring-social-twitter</artifactId>
             <version>${spring.social.twitter.version}</version>
         </dependency>
+        
+        
+        <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-oauth2 -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-oauth2</artifactId>
+            <version>v2-rev114-1.22.0</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.googlecode.googleplus/google-plus-java-api -->
+        <dependency>
+            <groupId>com.googlecode.googleplus</groupId>
+            <artifactId>google-plus-java-api</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+        
+        <dependency> 
+            <groupId>com.google.apis</groupId> 
+            <artifactId>google-api-services-plus</artifactId> 
+            <version>v1-rev407-1.22.0</version> 
+        </dependency> 
+    
         <!-- CGLIB -->
         <dependency>
             <groupId>cglib</groupId>
@@ -574,8 +596,12 @@
             <artifactId>maven-glassfish-plugin</artifactId>
             <version>2.1</version>
         </dependency>
-
-        
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-google</artifactId>
+            <version>1.0.0.RELEASE</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 </project>
 

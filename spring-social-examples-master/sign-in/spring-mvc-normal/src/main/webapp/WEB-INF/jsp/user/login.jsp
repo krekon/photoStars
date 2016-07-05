@@ -60,7 +60,7 @@
             </div>
             <div class="row social-button-row">
                 <div class="col-lg-4">
-                    <a href="${pageContext.request.contextPath}/auth/twitter"><button class="btn btn-twitter"><i class="icon-twitter"></i> | <spring:message code="label.twitter.sign.in.button"/></button></a>
+                    <a href="${pageContext.request.contextPath}/auth/google?scope=profile&redirect_uri=postmessage"><button class="btn btn-google-plus"><i class="icon-google-plus"></i> | <spring:message code="label.google.sign.in.button"/></button></a>
                 </div>
             </div>
         </div>

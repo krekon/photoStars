@@ -54,7 +54,7 @@
                         <i class="icon-facebook-sign"></i>
                     </c:if>
                     <c:if test="${signInProvider == 'TWITTER'}">
-                        <i class="icon-twitter-sign"></i>
+                        <i class="icon-google-plus-sign"></i>
                     </c:if>
                     <c:if test="${empty signInProvider}">
                         <spring:message code="label.navigation.signed.in.as.text"/>

@@ -1,6 +1,6 @@
 package net.petrikainulainen.spring.social.signinmvc.user.controller;
 
-import javax.inject.Inject;
+
 import net.petrikainulainen.spring.social.signinmvc.security.util.SecurityUtil;
 import net.petrikainulainen.spring.social.signinmvc.user.dto.RegistrationForm;
 import net.petrikainulainen.spring.social.signinmvc.user.model.SocialMediaService;
@@ -25,9 +25,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.validation.Valid;
-import org.springframework.social.connect.ConnectionFactoryLocator;
-import org.springframework.social.connect.UsersConnectionRepository;
-import org.springframework.social.connect.web.ConnectController;
 
 
 
@@ -44,12 +41,12 @@ public class RegistrationController {
     protected static final String MODEL_NAME_REGISTRATION_DTO = "user";
     protected static final String VIEW_NAME_REGISTRATION_PAGE = "user/registrationForm";
 
-    private ProviderSignInUtils providerSignInUtils;
+    
     private UserService service;
 
     @Autowired
     public RegistrationController(UserService service) {
-        this.providerSignInUtils = new ProviderSignInUtils();
+        
        
         this.service = service;
     }
@@ -60,7 +57,7 @@ public class RegistrationController {
      * @return
      */
     @RequestMapping(value = "/user/register", method = RequestMethod.GET)
-    public String showRegistrationForm(Model model, WebRequest request) {
+    public String showRegistrationForm(WebRequest request, Model model) {
         LOGGER.debug("Rendering registration page.");
 
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
