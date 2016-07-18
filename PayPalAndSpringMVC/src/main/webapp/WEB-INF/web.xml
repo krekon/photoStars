@@ -21,21 +21,26 @@
  	
  	<context-param>
  		<param-name>authtoken</param-name>
- 		<param-value>dr5oN0AldAgoMY1Sfq6jFliOEc4ed9nYvA_TpyEBLn5wYgnfTOOWu5FLVI8</param-value>
+ 		<param-value>piGSPzVmMLjeL6UlHph5rjuqT47JvwDwNSCEW-gZGA4tcTuN9eZvE08gujm</param-value>
  	</context-param>
  	
  	<context-param>
- 		<param-name>posturl</param-name>
+ 		<param-name>posturlsandbox</param-name>
  		<param-value>https://www.sandbox.paypal.com/cgi-bin/webscr</param-value>
+ 	</context-param>
+        
+        <context-param>
+ 		<param-name>posturl</param-name>
+ 		<param-value>https://www.paypal.com/cgi-bin/webscr</param-value>
  	</context-param>
  	
  	<context-param>
  		<param-name>business</param-name>
- 		<param-value>phanhuutri2003-facicici@yahoo.com</param-value>
+ 		<param-value>dim-merchant@hotmail.com</param-value>
  	</context-param>
  	
  	<context-param>
  		<param-name>returnurl</param-name>
- 		<param-value>http://localhost:8080/PaypalAndSpringMVC/paypal/success.html</param-value>
+ 		<param-value>http://127.0.0.1:8080/PayPalAndSpringMVC/paypal/success.html</param-value>
  	</context-param>
 </web-app>

@@ -35,7 +35,7 @@ public class PayPalConfig {
 		PayPalConfig pc = new PayPalConfig();
 		try{
 			pc.authToken = request.getServletContext().getInitParameter("authtoken");
-			pc.posturl = request.getServletContext().getInitParameter("posturl");
+			pc.posturl = request.getServletContext().getInitParameter("posturlsandbox");
 			pc.business = request.getServletContext().getInitParameter("business");
 			pc.returnurl = request.getServletContext().getInitParameter("returnurl");
 		}

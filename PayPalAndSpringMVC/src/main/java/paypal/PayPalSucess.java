@@ -1,12 +1,13 @@
 package paypal;
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLDecoder;
 
 import javax.servlet.http.HttpServletRequest;
 
-import sun.net.www.protocol.http.HttpURLConnection;
+
 
 public class PayPalSucess {
 	
