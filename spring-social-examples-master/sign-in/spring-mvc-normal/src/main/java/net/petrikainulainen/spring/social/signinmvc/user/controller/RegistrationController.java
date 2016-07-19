@@ -1,6 +1,5 @@
 package net.petrikainulainen.spring.social.signinmvc.user.controller;
 
-import javax.inject.Inject;
 import net.petrikainulainen.spring.social.signinmvc.security.util.SecurityUtil;
 import net.petrikainulainen.spring.social.signinmvc.user.dto.RegistrationForm;
 import net.petrikainulainen.spring.social.signinmvc.user.model.SocialMediaService;
@@ -25,17 +24,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.request.WebRequest;
 
 import javax.validation.Valid;
-import org.springframework.social.connect.ConnectionFactoryLocator;
-import org.springframework.social.connect.UsersConnectionRepository;
-import org.springframework.social.connect.web.ConnectController;
-
-
 
 /**
  * @author Petri Kainulainen
  */
 @Controller
-//@SessionAttributes("user")
+@SessionAttributes("user")
 public class RegistrationController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RegistrationController.class);
@@ -44,43 +38,36 @@ public class RegistrationController {
     protected static final String MODEL_NAME_REGISTRATION_DTO = "user";
     protected static final String VIEW_NAME_REGISTRATION_PAGE = "user/registrationForm";
 
-    private ProviderSignInUtils providerSignInUtils;
     private UserService service;
 
     @Autowired
     public RegistrationController(UserService service) {
-        this.providerSignInUtils = new ProviderSignInUtils();
-       
         this.service = service;
     }
 
     /**
      * Renders the registration page.
-     *
-     * @return
      */
     @RequestMapping(value = "/user/register", method = RequestMethod.GET)
-    public String showRegistrationForm(Model model, WebRequest request) {
+    public String showRegistrationForm(WebRequest request, Model model) {
         LOGGER.debug("Rendering registration page.");
 
         Connection<?> connection = ProviderSignInUtils.getConnection(request);
 
         RegistrationForm registration = createRegistrationDTO(connection);
         LOGGER.debug("Rendering registration form with information: {}", registration);
-//
-        model.addAttribute(MODEL_NAME_REGISTRATION_DTO, new RegistrationForm());
+
+        model.addAttribute(MODEL_NAME_REGISTRATION_DTO, registration);
 
         return VIEW_NAME_REGISTRATION_PAGE;
     }
 
     /**
      * Creates the form object used in the registration form.
-     *
      * @param connection
-     * @return If a user is signing in by using a social provider, this method
-     * returns a form object populated by the values given by the provider.
-     * Otherwise this method returns an empty form object (normal form
-     * registration).
+     * @return  If a user is signing in by using a social provider, this method returns a form
+     *          object populated by the values given by the provider. Otherwise this method returns
+     *          an empty form object (normal form registration).
      */
     private RegistrationForm createRegistrationDTO(Connection<?> connection) {
         RegistrationForm dto = new RegistrationForm();
@@ -101,10 +88,10 @@ public class RegistrationController {
     /**
      * Processes the form submissions of the registration form.
      */
-    @RequestMapping(value = "/user/register", method = RequestMethod.POST)
+    @RequestMapping(value ="/user/register", method = RequestMethod.POST)
     public String registerUserAccount(@Valid @ModelAttribute("user") RegistrationForm userAccountData,
-            BindingResult result,
-            WebRequest request) throws DuplicateEmailException {
+                                      BindingResult result,
+                                      WebRequest request) throws DuplicateEmailException {
         LOGGER.debug("Registering user account with information: {}", userAccountData);
         if (result.hasErrors()) {
             LOGGER.debug("Validation errors found. Rendering form view.");
@@ -134,17 +121,9 @@ public class RegistrationController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/signin", method = RequestMethod.GET)
-    public String showApage(Model model, WebRequest request) {
-         Connection<?> connection = ProviderSignInUtils.getConnection(request);
-        LOGGER.debug("Rendering homepage.");
-        return "redirect:/user/register";
-    }
-
     /**
-     * Creates a new user account by calling the service method. If the email
-     * address is found from the database, this method adds a field error to the
-     * email field of the form object.
+     * Creates a new user account by calling the service method. If the email address is found
+     * from the database, this method adds a field error to the email field of the form object.
      */
     private User createUserAccount(RegistrationForm userAccountData, BindingResult result) {
         LOGGER.debug("Creating user account with information: {}", userAccountData);
@@ -152,7 +131,8 @@ public class RegistrationController {
 
         try {
             registered = service.registerNewUserAccount(userAccountData);
-        } catch (DuplicateEmailException ex) {
+        }
+        catch (DuplicateEmailException ex) {
             LOGGER.debug("An email address: {} exists.", userAccountData.getEmail());
             addFieldError(
                     MODEL_NAME_REGISTRATION_DTO,
@@ -165,7 +145,7 @@ public class RegistrationController {
         return registered;
     }
 
-    private void addFieldError(String objectName, String fieldName, String fieldValue, String errorCode, BindingResult result) {
+    private void addFieldError(String objectName, String fieldName, String fieldValue,  String errorCode, BindingResult result) {
         LOGGER.debug(
                 "Adding field error object's: {} field: {} with error code: {}",
                 objectName,

@@ -1,0 +1,14 @@
+MySql Server
+root pass: tr1gwn0ps@roulhs
+
+user 1 name: sa
+user 1 pass: tr1gwn0ps@roulhs
+
+
+8822381198
+
+wordpress: 
+	admin
+	opontikomikroulis
+
+	
