@@ -18,6 +18,7 @@ import org.springframework.social.security.AuthenticationNameUserIdSource;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
 import javax.sql.DataSource;
+import org.springframework.social.connect.web.ProviderSignInUtils;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
 
 /**
@@ -82,4 +83,13 @@ public class SocialContext implements SocialConfigurer {
     public ConnectController connectController(ConnectionFactoryLocator connectionFactoryLocator, ConnectionRepository connectionRepository) {
         return new ConnectController(connectionFactoryLocator, connectionRepository);
     }
+    
+    @Bean
+	public ProviderSignInUtils providerSignInUtils(
+				ConnectionFactoryLocator connectionFactoryLocator,
+				UsersConnectionRepository connectionRepository) {
+		return new ProviderSignInUtils(connectionFactoryLocator,
+                   connectionRepository
+		);
+	}
 }

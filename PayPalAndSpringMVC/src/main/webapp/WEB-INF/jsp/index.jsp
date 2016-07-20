@@ -48,89 +48,136 @@
             <input type="hidden" name="paymentaction" value="order">
         </form>
 
-        
+
+
+
+            <h1>Store</h1>
+        <div id="my-store-9831163"></div>
+        <div>
+            <script type="text/javascript" src="https://app.ecwid.com/script.js?9831163&data_platform=code&data_date=2016-07-19" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3", "views=grid(3,3) list(10) table(20)", "categoryView=grid", "searchView=list", "id=my-store-9831163");</script>
+        </div>
+<h1>Categories</h1>
+        <div id="my-categories-9831163"></div>
+        <div>
+            <script type="text/javascript" src="https://app.ecwid.com/script.js?9831163&data_platform=code&data_date=2016-07-19" charset="utf-8"></script>
+            <script type="text/javascript"> xCategoriesV2("id=my-categories-9831163");</script>
+        </div>
+
+<h1>Cart</h1>
+        <div id="my-cart-9831163"></div>
+        <div>
+            <script type="text/javascript" src="https://app.ecwid.com/script.js?9831163&data_platform=code&data_date=2016-07-19" charset="utf-8"></script>
+            <!-- remove layout parameter if you want to position minicart yourself -->
+            <script type="text/javascript"> xMinicart("layout=attachToCategories", "id=my-cart-9831163");</script>
+        </div>
+        <h1>Custom</h1>
+        <div class="ecwid ecwid-SingleProduct ecwid-Product ecwid-Product-68925617" itemscope 
+             itemtype="http://schema.org/Product" 
+             data-single-product-id="68925617">
+            <div style="width:100px; height:100px; background-color:red;"><img src="20150318_172051.jpg" alt=""/></div>
+            <img src="../../20150318_172051.jpg" alt=""/>
+            <div itemprop="image"></div>
+            <div class="ecwid-title" itemprop="name"></div>
+            <div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+                <div class="ecwid-productBrowser-price ecwid-price" itemprop="price"></div></div>
+            <div customprop="options"></div><div customprop="addtobag"></div></div>
+        <script type="text/javascript" src="https://app.ecwid.com/script.js?9831163&data_platform=singleproduct" charset="utf-8">
+            
+        </script>
+        <script type="text/javascript">xSingleProduct()</script>
+
+        <!--            <div id="my-cart-9831163"></div>
+                    <div>
+                        <script type="text/javascript" src="https://app.ecwid.com/script.js?9831163&data_platform=code&data_date=2016-07-19" charset="utf-8"></script>
+                         remove layout parameter if you want to position minicart yourself 
+                        <script type="text/javascript"> xMinicart("layout=attachToCategories", "id=my-cart-9831163"); </script>
+                    </div>-->
+
+
+
+
+
+
+
+
+
         <!--Paypal Buttons-->
 
-<!--       
-
-        <form target="paypal" action="${initParam['posturl']}" method="post">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-                   ">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-
-            <input type="hidden" name="return" value="${initParam['returnurl']}" />
-
-            <input type="hidden" name="business" value="${initParam['business']}" />
-
-
-        </form>
-
-        <form target="paypal" action="${initParam['posturl']}" method="post">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="VATRX2YMBUC78">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-
-            <input type="hidden" name="return" value="${initParam['returnurl']}" />
-
-            <input type="hidden" name="business" value="${initParam['business']}" />
-
-
-        </form>
-
-
-
-        <form target="paypal" action="${initParam['posturl']}" method="post">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="MGX22K8U4CCY8">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-
-            <input type="hidden" name="return" value="${initParam['returnurl']}" />
-
-            <input type="hidden" name="business" value="${initParam['business']}" />
-
-
-        </form>
-
-
-
-        <form target="paypal" action="${initParam['posturl']}" method="post">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="7DATX9RYMQY8Y">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-
-            <input type="hidden" name="return" value="${initParam['returnurl']}" />
-
-            <input type="hidden" name="business" value="${initParam['business']}" />
-
-
-        </form>-->
-
-
-
-<!--
-            <input type="hidden" name="upload" value="1" />
-            <input type="hidden" name="return" value="${initParam['returnurl']}" />
-            <input type="hidden" name="cmd" value="_cart" />
-            <input type="hidden" name="business" value="${initParam['business']}" />
-            
-            <input type="hidden" name="paymentaction" value="order">
-
-
-             Product 1 
-
-            <input type="hidden" name="item_name_1" value="Product 1" />
-            <input type="hidden" name="item_number_1" value="p1" />
-            <input type="hidden" name="amount_1" value="2" />
-            <input type="hidden" name="quantity_1" value="3" />
-
-            <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif">-->
-
+        <!--       
         
+                <form target="paypal" action="${initParam['posturl']}" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                           ">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_viewcart_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        
+                    <input type="hidden" name="return" value="${initParam['returnurl']}" />
+                    <input type="hidden" name="paymentaction" value="order">
+        
+                </form>
+        
+                <form target="paypal" action="${initParam['posturl']}" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="VATRX2YMBUC78">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        
+                    <input type="hidden" name="return" value="${initParam['returnurl']}" />
+                    <input type="hidden" name="paymentaction" value="order">
+        
+        
+                </form>
+        
+        
+        
+                <form target="paypal" action="${initParam['posturl']}" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="MGX22K8U4CCY8">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        
+                    <input type="hidden" name="return" value="${initParam['returnurl']}" />
+                    <input type="hidden" name="paymentaction" value="order">
+        
+        
+                </form>
+        
+        
+        
+                <form target="paypal" action="${initParam['posturl']}" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="7DATX9RYMQY8Y">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        
+                    <input type="hidden" name="return" value="${initParam['returnurl']}" />
+                    <input type="hidden" name="paymentaction" value="order">
+        
+        
+                </form>-->
+
+
+
+        <!--
+                    <input type="hidden" name="upload" value="1" />
+                    <input type="hidden" name="return" value="${initParam['returnurl']}" />
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="business" value="${initParam['business']}" />
+                    
+                    <input type="hidden" name="paymentaction" value="order">
+        
+        
+                     Product 1 
+        
+                    <input type="hidden" name="item_name_1" value="Product 1" />
+                    <input type="hidden" name="item_number_1" value="p1" />
+                    <input type="hidden" name="amount_1" value="2" />
+                    <input type="hidden" name="quantity_1" value="3" />
+        
+                    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif">-->
+
+
 
 
 
