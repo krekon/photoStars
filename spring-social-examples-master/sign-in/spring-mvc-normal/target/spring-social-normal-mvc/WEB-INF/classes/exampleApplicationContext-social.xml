@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:twitter="http://www.springframework.org/schema/social/twitter"
+       xmlns:social="http://www.springframework.org/schema/social"
+       xmlns:facebook="http://www.springframework.org/schema/social/facebook"
+       xmlns:google="http://www.springframework.org/schema/social/google"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/social http://www.springframework.org/schema/social/spring-social.xsd
+       http://www.springframework.org/schema/social/twitter http://www.springframework.org/schema/social/spring-social-twitter.xsd
+       http://www.springframework.org/schema/social/facebook http://www.springframework.org/schema/social/spring-social-facebook.xsd
+       http://www.springframework.org/schema/social/google http://www.springframework.org/schema/social/spring-social-google.xsd">
+
+    <!-- Ensures that configuration properties are read from a property file -->
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!--
+        Configures FB and Twitter support.
+    -->
+    <facebook:config app-id="1456173791320634" app-secret="f5067980a86ecdfa96e580ba5d1"/>
+    <twitter:config app-id="VAqGrvmAiFz6jVTGcps" app-secret="mVvxTgeR4DLn2PKMsIRv87ADnnWTxqa5WBq0yLfiKQSLId"/>
+    <google:config app-id="653509427335-1ihng291mgglis9obf0ogas6f4p8eh1v.apps.googleusercontent.com" app-secret="ucl4as-JUPfg_yIAlo_DBdP8"/>
+
+    <!--
+        Configures the connection repository. This application uses JDBC
+        connection repository which saves connection details to database.
+        This repository uses the data source bean for obtaining database
+        connection.
+    -->
+    <social:jdbc-connection-repository/>
+
+    <!--
+        This bean manages the connection flow between the account provider and
+        the example application.
+    -->
+    <bean id="connectController" class="org.springframework.social.connect.web.ConnectController"
+          autowire="constructor"/>
+</beans>

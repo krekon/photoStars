@@ -26,8 +26,8 @@ public class ExampleApplicationConfig implements WebApplicationInitializer {
         rootContext.register(ExampleApplicationContext.class);
 
         //If you want to use the XML configuration, uncomment the following lines.
-//        XmlWebApplicationContext rootContext = new XmlWebApplicationContext();
-//        rootContext.setConfigLocation("classpath:exampleApplicationContext.xml");
+        //XmlWebApplicationContext rootContext = new XmlWebApplicationContext();
+        //rootContext.setConfigLocation("classpath:exampleApplicationContext.xml");
 
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(rootContext));
         dispatcher.setLoadOnStartup(1);
