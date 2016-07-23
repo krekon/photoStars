@@ -1,0 +1,3 @@
+https://developer.paypal.com/developer/accountStatus/
+
+https://www.sandbox.paypal.com/gr/webapps/mpp/home

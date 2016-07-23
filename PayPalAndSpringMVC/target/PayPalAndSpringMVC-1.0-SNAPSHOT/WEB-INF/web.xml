@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>PayPalAndSpringMVC</display-name>
+ 	<servlet>
+ 		<servlet-name>dispatcher</servlet-name>
+ 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ 		<load-on-startup>1</load-on-startup>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>dispatcher</servlet-name>
+ 		<url-pattern>*.html</url-pattern>
+ 	</servlet-mapping>
+ 	<session-config>
+ 		<session-timeout>30</session-timeout>
+ 	</session-config>
+ 	<welcome-file-list>
+ 		<welcome-file>redirect.jsp</welcome-file>
+ 	</welcome-file-list>
+ 	
+ 	<!-- Paypal Configuration -->
+ 	
+ 	<context-param>
+ 		<param-name>authtoken</param-name>
+ 		<param-value>piGSPzVmMLjeL6UlHph5rjuqT47JvwDwNSCEW-gZGA4tcTuN9eZvE08gujm</param-value>
+ 	</context-param>
+ 	
+ 	<context-param>
+ 		<param-name>posturlsandbox</param-name>
+ 		<param-value>https://www.sandbox.paypal.com/cgi-bin/webscr</param-value>
+ 	</context-param>
+        
+        <context-param>
+ 		<param-name>posturl</param-name>
+ 		<param-value>https://www.paypal.com/cgi-bin/webscr</param-value>
+ 	</context-param>
+ 	
+ 	<context-param>
+ 		<param-name>business</param-name>
+ 		<param-value>dim-merchant@hotmail.com</param-value>
+ 	</context-param>
+ 	
+ 	<context-param>
+ 		<param-name>returnurl</param-name>
+ 		<param-value>http://127.0.0.1:8080/PayPalAndSpringMVC/paypal/success.html</param-value>
+ 	</context-param>
+</web-app>
