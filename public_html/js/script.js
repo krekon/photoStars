@@ -78,3 +78,13 @@ $(document).ready(function () {
 
 });
 
+$(function () {
+    if (Ecwid) {
+        Ecwid.OnPageLoaded.add(function (page) {
+            console.log("Current page is of type: " + page.type);
+            if (page.type == "CHECKOUT_PAYMENT_DETAILS")
+                alert('Πας να ψωνίσεις χωρίς να έχεις δώσει τα στοιχεία σου! Δεν έχουμε παράγει amulete για εσένα! Κανόνικά θα τον πηγαίνουμε κάπου αλλού...');
+        });
+    }
+
+});

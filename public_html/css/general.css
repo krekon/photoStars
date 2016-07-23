@@ -141,9 +141,22 @@ filter: alpha(opacity=95) !important;
 }
 
 .mybutton_cyano{
-	border: 1px solid #4A90BE;
-	color: #fff;
-	background-color:#4A90BE;
+    border: 1px solid #4A90BE;
+    color: #fff;
+    background-color: #4A90BE;
+   
+    font-size: 24px !important;
+    line-height: 80px !important;
+    box-shadow: 5px 5px 5px gray;
+  
+    width:100%;
+    
+}
+.intro-header .mybutton_cyano{
+     position: absolute;
+    left: 30px;
+    right: 30px;
+    bottom: 50px;
 }
 
 .mybutton_cyano:hover{
@@ -246,7 +259,7 @@ color: #ECEBEB;
 	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
 	padding-bottom: 50px;
 	color: #f8f8f8;
-	background: url(../img/intro/intro5.jpg) no-repeat center center;
+	//background: url(../img/intro/intro5.jpg) no-repeat center center;
 	background-size: cover;
 	text-align: center;
 }
@@ -1070,7 +1083,7 @@ color: #ECEBEB;
 		    background-image: none; 
 			background-size: cover;
 			text-align: center;
-			background-color: #34495e;
+			//background-color: #34495e;
 		}
 		
 		h1, .h1 {
