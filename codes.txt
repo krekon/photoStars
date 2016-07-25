@@ -1,17 +1,9 @@
 MySql Server
 root pass: tr1gwn0ps@roulhs
-
 user 1 name: sa
 user 1 pass: tr1gwn0ps@roulhs
 
-
-8822381198
-
-wordpress: 
-	admin
-	opontikomikroulis
-
-	
+**************************** Ecwid 	**************************** 
 https://my.ecwid.com/cp/CP.html#dashboard
 store id : 9853531
 u:	abaoubas@yahoo.gr
@@ -20,3 +12,48 @@ p:	12345678
 εναλακτικά
 [7:19:02 μμ] Δημήτρης Φιλιππόπουλος: dimfi@hotmail.com
 [7:19:06 μμ] Δημήτρης Φιλιππόπουλος: 123456789
+
+
+**************************** 2Checkout 	**************************** 
+instructions
+https://support.ecwid.com/hc/en-us/articles/207806825-2checkout
+https://www.2checkout.com/shopping-cart/ecwid
+
+u: abaoubas
+p: 12345678aA
+email: abaoubas@yahoo.gr
+Secret word:
+M2E3NzE0YzItOGYyYy00YTg5LTgyNGUtNTUxOTdmNzA4MTdk
+Account Number:
+901324146
+
+-------old
+username: krekon
+password: 123456789
+email: dimfi@hotmail.com
+site: localhost.gr
+
+Your Approved and INS URL:                  //Αυτό το δίνει το ECWID και το βάζεις στο αντίστοιχο πεδίο στο 2Checkout
+http://app.ecwid.com/2checkout/9831163
+
+2Checkout account number
+102970582
+
+Secret Word
+MzY2MGQzZjYtYTA2Ni00NWE1LWIxNjgtNjkxODk4ZjEzYjQ1
+
+
+**************************** Paypal	**************************** 
+για να πουλήσεις
+u: dimfi-facilitator@hotmail.com
+p: 123456789
+
+για να αγοράσεις
+u: dim-buyer@hotmail.com
+p: 123456789
+
+ο βασικός λογαριασμός
+u: dimfi@hotmail.com
+p: 123456789
+
+****************************  **************************** 

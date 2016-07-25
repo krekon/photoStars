@@ -2,3 +2,7 @@ https://www.printingin3d.eu/javascad
 
 
 http://jsfiddle.net/Riham/yzvGD/embedded/result/
+
+https://developer.paypal.com/developer/accountStatus/
+
+https://www.sandbox.paypal.com/gr/webapps/mpp/home

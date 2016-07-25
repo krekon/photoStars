@@ -1,0 +1,14 @@
+
+
+
+1) get Access token (θανάσης)
+2) Get Order details - πληροφορίες παραγγελίες (θανάσης)
+3) πριν αγοράσει, αν δεν έχει παραξει amulet, θα τον στέλνουμε στην FillInYourInfo.html
+4) Σελίδα FillInYourInfo.html (Δημήτρης)
+	- google maps
+	- να προστεθεί κάτω από το "Year of birth" ένα πεδίο "Month" και "Day" και "Time", και τα δύο drop downs
+	- το proceed να πηγαίνει στη σελίδα "generate.html"
+5) generate.html
+	Πάνω θα δείχνει μια εικόνα του amulet που δημιουργήθηκε
+	απο κάτω θα έχει το shop
+	όταν πατήσει το κουμπί "Αγορά", να του ανοίγει κατευθείαν το καλάθι

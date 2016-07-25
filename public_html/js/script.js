@@ -84,6 +84,9 @@ $(function () {
             console.log("Current page is of type: " + page.type);
             if (page.type == "CHECKOUT_PAYMENT_DETAILS")
                 alert('Πας να ψωνίσεις χωρίς να έχεις δώσει τα στοιχεία σου! Δεν έχουμε παράγει amulete για εσένα! Κανόνικά θα τον πηγαίνουμε κάπου αλλού...');
+            else if(page.type == 'ORDER_CONFIRMATION'){
+                debugger;
+            }
         });
     }
 
