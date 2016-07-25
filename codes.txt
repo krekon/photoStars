@@ -1,4 +1,4 @@
-MySql Server
+﻿MySql Server
 root pass: tr1gwn0ps@roulhs
 user 1 name: sa
 user 1 pass: tr1gwn0ps@roulhs
@@ -56,4 +56,11 @@ p: 123456789
 u: dimfi@hotmail.com
 p: 123456789
 
-****************************  **************************** 
+**************************** Google Map API  **************************** 
+
+key name: "Browser key 1"
+API key: AIzaSyD2LTKuNIKqc8qTqNs3zHnCmI5H_GDPGgI
+
+
+
+
