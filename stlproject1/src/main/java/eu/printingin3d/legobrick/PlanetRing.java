@@ -7,13 +7,11 @@ package eu.printingin3d.legobrick;
 
 import eu.printingin3d.javascad.basic.Radius;
 import eu.printingin3d.javascad.coords.*;
-import eu.printingin3d.javascad.coords2d.Coords2d;
 import eu.printingin3d.javascad.exceptions.IllegalValueException;
 import eu.printingin3d.javascad.models.*;
 import eu.printingin3d.javascad.models2d.*;
 import eu.printingin3d.javascad.tranzitions.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -95,8 +93,9 @@ public class PlanetRing extends Union {
     }
 
     private static Abstract3dModel getOrbit(double radius) {
-        Circle r = new Circle(Radius.fromRadius(ORBIT_WEIGHT));
-        return new Ring(radius, r);
+        return new Sphere(Radius.fromRadius(1));
+//        Circle r = new Circle(Radius.fromRadius(ORBIT_WEIGHT));
+//        return new Ring(radius, r);
     }
 
     private static Abstract3dModel getPlanet(double radius) {
