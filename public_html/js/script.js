@@ -90,7 +90,7 @@ $(function () {
           
 
             Ecwid.Cart.get(function (cart) {
-                alert(cart.productsQuantity + " products in cart now");
+               // alert(cart.productsQuantity + " products in cart now");
             });
         });
 
