@@ -1,3 +1,5 @@
 /bitAmuletWeb/nbproject/private/
 /bitAmuletWeb/build/
 *.netbeans_automatic_build
+/public_html/bower_components/bootstrap/nbproject/private/
+/public_html/bower_components/bootstrap-fileinput/nbproject/private/
